@@ -73,7 +73,7 @@ getKeyVaultSecrets()
 
     app.post("/api/detectAnomaly", async (req, res) => {
       const data = {
-        series: req.body.series, // change this as per your data structure
+        series: req.body.series,
         maxAnomalyRatio: 0.25,
         sensitivity: 95,
         granularity: "secondly",
