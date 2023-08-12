@@ -1,0 +1,16 @@
+{
+  "name": "baby_monitor",
+  "version": "1.0.0",
+  "description": "Real-time Baby Monitor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "@tensorflow-models/posenet": "^2.2.1",
+    "@azure/identity": "^2.0.1",
+    "@azure/keyvault-secrets": "^4.3.0"
+  }
+}

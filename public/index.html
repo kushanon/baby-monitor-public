@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-time Baby Monitor</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <script type="module" src="js/main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <h1>Real-time Baby Monitor</h1>
+  <p>This real-time baby monitor uses your device's camera and microphone to capture video and audio data. It analyzes the data in real time to monitor the baby's movements and sounds. The information is displayed in various charts, which help you understand the baby's state in detail. In case of any abnormal activity, the system will alert you.</p>
+  
+  <div class="page-content">
+    <h2>Camera and detected Keypoints/Skelton</h2>
+    <video id="videoElement" width="640" height="480" autoplay playsinline ></video>
+    <canvas id="canvas" width="640" height="480" ></canvas>
+    <div id="anomaly-message" ></div>
+    <canvas id="audioVisualizer" width="640" height="100" ></canvas>
+    <h2>Features</h2>
+    <p>The charts below illustrate the analysis of different features from the video and audio data.</p>
+    <div id="charts-container" class="charts-row">
+      <div class="chart-cell">
+        <h3>Total Movement</h3>
+        <p>Shows the total movement detected in the video frame.</p>
+        <div id="totalMovement-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Head Movement</h3>
+        <p>Shows the movement of the head detected in the video frame.</p>
+        <div id="headMovement-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Hand and Leg Movement</h3>
+        <p>Shows the movement of the hands and legs detected in the video frame.</p>
+        <div id="handAndLegMovement-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Body Length</h3>
+        <p>Shows the calculated body length in the video frame.</p>
+        <div id="bodyLength-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Body Orientation</h3>
+        <p>Shows the calculated body orientation in the video frame.</p>
+        <div id="bodyOrientation-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Nose Detected</h3>
+        <p>Indicates whether the nose was detected in the video frame.</p>
+        <div id="noseDetected-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Chest and Abdomen Movement</h3>
+        <p>Shows the movement of the chest and abdomen detected in the video frame.</p>
+        <div id="chestAndAbdomenMovement-container" class="chart-container"></div>
+      </div>
+      <div class="chart-cell">
+        <h3>Power Sum 2kHz to 4kHz</h3>
+        <p>Shows the power sum of frequencies between 2kHz and 4kHz in the audio data.</p>
+        <div id="powerSum_2kHz_4kHz-container" class="chart-container"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
